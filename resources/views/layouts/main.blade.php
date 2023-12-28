@@ -19,6 +19,16 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
         @yield('css-plugins')
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="{{ asset('/') }}assets/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="{{ asset('/') }}assets/css/style.css" rel="stylesheet">
+
+        <!-- Favicon -->
+        <link rel="icon" href="{{ asset('/') }}/assets/img/bikin-dingin.png" sizes="any">
+
     </head>
 
     <body>
@@ -35,43 +45,9 @@
         <!-- Navbar Start -->
         @include('partials.navbar')
         <!-- Navbar End -->
-        
-        <!-- Carousel Start -->
-        @include('partials.carousel')
-        <!-- Carousel End -->
-        
-        <!-- Fact Start -->
-        @include('partials.fact')
-        <!-- Fact End -->
-        
-        <!-- About Start -->
-        @include('partials.about')
-        <!-- About End -->
-        
-        <!-- Services Start -->
-        @include('partials.services')
-        <!-- Services End -->
-        
-        <!-- Project Start -->
-        @include('partials.project')
-        <!-- Project End -->
-        
-        <!-- Blog Start -->
-        {{-- @include('partials.blog') --}}
-        <!-- Blog End -->
-        
-        <!-- Team Start -->
-        {{-- @include('partials.team') --}}
-        <!-- Team End -->
-        
-        <!-- Testimonial Start -->
-        {{-- @include('partials.testimonial') --}}
-        <!-- Testimonial End -->
-        
-        <!-- Contact Start -->
-        @include('partials.contact')
-        <!-- Contact End -->
-        
+
+        @yield('container')
+
         <!-- Footer Start -->
         @include('partials.footer')
         <!-- Footer End -->
@@ -79,7 +55,14 @@
         <!-- Back to Top -->
         <a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top"><i class="fa fa-arrow-up text-white"></i></a>
 
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
         @yield('js-plugins')
+    
+        <!-- Template Javascript -->
+        <script src="assets/js/main.js"></script>
+    
     </body>
     
     </html>
