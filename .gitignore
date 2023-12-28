@@ -17,3 +17,10 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+.DS_Store
+public/.DS_Store
+public/assets/.DS_Store
+public/assets/HighTechIT-1.0.0/.DS_Store
+public/assets/img/.DS_Store
+public/assets/lib/.DS_Store
+.gitignore
