@@ -14,7 +14,7 @@
                         </div>
                         <div class="ms-3">
                             <h4 class="text-primary">Alamat</h4>
-                            <a href="https://goo.gl/maps/Zd4BCynmTb98ivUJ6" target="_blank" class="h5">23 rank Str, NY</a>
+                            <a href="https://goo.gl/maps/Zd4BCynmTb98ivUJ6" target="_blank" class="h5">Makassar, Sulawesi Selatan</a>
                         </div>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
                         </div>
                         <div class="ms-3">
                             <h4 class="text-primary">Hubungi Kami</h4>
-                            <a class="h5" href="tel:+0123456789" target="_blank">+62 822-4903-7482</a>
+                            <a class="h5" href="tel:+6282249037482" target="_blank">+62 822-4903-7482</a>
                         </div>
                     </div>
                 </div>
