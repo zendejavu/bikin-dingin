@@ -15,16 +15,7 @@
                     <a href="/#" class="nav-item nav-link active text-secondary">Beranda</a>
                     <a href="/#about" class="nav-item nav-link">Tentang</a>
                     <a href="/#services" class="nav-item nav-link">Layanan</a>
-                    <a href="/#project" class="nav-item nav-link">Pemesanan</a>
-                    {{-- <div class="nav-item dropdown">
-                        <a href="/#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu rounded">
-                            <a href="blog.html" class="dropdown-item">Our Blog</a>
-                            <a href="team.html" class="dropdown-item">Our Team</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            <a href="404.html" class="dropdown-item">404 Page</a>
-                        </div>
-                    </div> --}}
+                    <a href="/order" class="nav-item nav-link">Pemesanan</a>
                     <a href="/#contact" class="nav-item nav-link">Kontak</a>
                 </div>
             </div>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,7 @@ Route::get('/', [UserController::class, 'index']);
 Route::get('/login', [AuthController::class, 'index']);
 Route::get('/register', [AuthController::class, 'register']);
 Route::get('/reset-pass', [AuthController::class, 'reset_pass']);
+
+//User Route
+Route::get('/order', [OrderController::class, 'index']);
+Route::get('/input-order', [OrderController::class, 'create']);

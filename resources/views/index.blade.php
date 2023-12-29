@@ -5,16 +5,9 @@
 {{-- @section('nav-title', __('messages.main_page')) --}}
 
 @section('css-plugins')
-    <!-- Libraries Stylesheet -->
-    <link href="{{ asset('/') }}assets/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="{{ asset('/') }}assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 @endsection
 
 @section('js-plugins')
-    <script src="{{ asset('/') }}assets/lib/wow/wow.min.js"></script>
-    <script src="{{ asset('/') }}assets/lib/easing/easing.min.js"></script>
-    <script src="{{ asset('/') }}assets/lib/waypoints/waypoints.min.js"></script>
-    <script src="{{ asset('/') }}assets/lib/owlcarousel/owl.carousel.min.js"></script>
 @endsection
 
 @section('container')        
