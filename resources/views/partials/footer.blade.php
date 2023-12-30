@@ -1,8 +1,8 @@
 <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
     <div class="container pt-5 pb-4">
         <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
-                <a href="index.html">
+            <div class="col-lg-6 col-md-6">
+                <a href="/">
                     <h1 class="text-white fw-bold d-block">Bikin<span class="text-secondary">Dingin</span> </h1>
                 </a>
                 <p class="mt-4 text-light">Bikin Urusan Pendinginmu Jadi Lebih Mudah</p>
@@ -16,14 +16,14 @@
             <div class="col-lg-3 col-md-6">
                 <a href="#" class="h3 text-secondary">Short Link</a>
                 <div class="mt-4 d-flex flex-column short-link">
-                    <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>About us</a>
-                    <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Contact us</a>
-                    <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Our Services</a>
-                    <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Our Projects</a>
-                    <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Latest Blog</a>
+                    <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Tentang Kami</a>
+                    <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Kontak Kami</a>
+                    <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Layanan Kami</a>
+                    <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Produk Kami</a>
+                    <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Artiker Terkini</a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
+            {{-- <div class="col-lg-3 col-md-6">
                 <a href="#" class="h3 text-secondary">Help Link</a>
                 <div class="mt-4 d-flex flex-column help-link">
                     <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Terms Of use</a>
@@ -32,9 +32,9 @@
                     <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>FQAs</a>
                     <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Contact</a>
                 </div>
-            </div>
+            </div> --}}
             <div class="col-lg-3 col-md-6">
-                <a href="#" class="h3 text-secondary">Contact Us</a>
+                <a href="#" class="h3 text-secondary">Kontak Kami</a>
                 <div class="text-white mt-4 d-flex flex-column contact-link">
                     <a href="#" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Makassar, Sulawesi Selatan</a>
                     <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-secondary me-2"></i> +62 822-4903-7482</a>
