@@ -1,4 +1,4 @@
-<div class="container-fluid bg-primary">
+<div class="container-fluid bg-primary sticky-top">
     <div class="container">
         <nav class="navbar navbar-dark navbar-expand-lg py-0">
             {{-- <a href="/" class="navbar-brand">
@@ -17,12 +17,16 @@
                     <a href="/#services" class="nav-item nav-link">Layanan</a>
                     <a href="/order" class="nav-item nav-link">Pemesanan</a>
                     <a href="/#contact" class="nav-item nav-link">Kontak</a>
+                    <hr class="text-left ml-0 bg-secondary p-0 bg-white">
+                </div>
+                <div class="navbar-nav ms-auto mx-xl-auto p-0 mb-3 navbar-toggler text-white-50" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <a href="/login" class="nav-item nav-link">Login</a>
                 </div>
             </div>
             <div class="d-none d-xl-flex flex-shirink-0">
                 <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
-                    <a href="https://wa.me/+6282249037482" class="position-relative animated tada infinite">
-                        <i class="fa fa-phone-alt text-white fa-2x"></i>
+                    <a href="https://wa.me/+6282249037482" target="_blank" class="position-relative animated tada infinite">
+                        <i class="fa-brands fa-whatsapp text-white fa-2x"></i>
                         <div class="position-absolute" style="top: -7px; left: 20px;">
                             <span><i class="fa fa-comment-dots text-secondary"></i></span>
                         </div>
@@ -33,8 +37,10 @@
                     <span class="text-secondary">WA: +62 822-4903-7482</span>
                 </div>
                 <div class="d-flex align-items-center justify-content-center ms-4">
-                    {{-- <a href="/#"><i class="bi bi-search text-white fa-2x"></i> </a> --}}
-                    <a href="/login" class="btn btn-success">Login</a>
+                    <a href="/login" class="btn btn-secondary text-black-50">
+                        <span><i class="fa-solid fa-arrow-right-to-bracket"></i></span>
+                        Login
+                    </a>
                 </div>
             </div>
         </nav>
