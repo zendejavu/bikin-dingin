@@ -9,7 +9,7 @@
                 <div class="services-item bg-light">
                     <div class="p-4 text-center services-content">
                         <div class="services-content-icon">
-                            <i class="fa fa-code fa-7x mb-4 text-primary"></i>
+                            <i class="fa fa-screwdriver-wrench fa-7x mb-4 text-primary"></i>
                             <h4 class="mb-3">Maintenance AC</h4>
                             <p class="mb-4">Pencucian unit indoor dan outdoor AC termasuk saringan udara unit indoor. Serta pengecekan kondisi unit seperti kelistrikan, tekanan gas refrigerant, dan kondisi pipa</p>
                             <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Lihat Detail</a>
@@ -21,7 +21,7 @@
                 <div class="services-item bg-light">
                     <div class="p-4 text-center services-content">
                         <div class="services-content-icon">
-                            <i class="fa fa-file-code fa-7x mb-4 text-primary"></i>
+                            <i class="fa fa-toolbox fa-7x mb-4 text-primary"></i>
                             <h4 class="mb-3">Maintenance Kulkas</h4>
                             <p class="mb-4">Pembersihan unit kulkas, luar dan dalam, pengecekan unit, seperti suhu, fungsi defrost dan pengecekan saluran distribusi udara pada unit.</p>
                             <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Lihat Detail</a>
@@ -33,7 +33,7 @@
                 <div class="services-item bg-light">
                     <div class="p-4 text-center services-content">
                         <div class="services-content-icon">
-                            <i class="fa fa-external-link-alt fa-7x mb-4 text-primary"></i>
+                            <i class="fa fa-person-digging fa-7x mb-4 text-primary"></i>
                             <h4 class="mb-3">Maintenance Freezer</h4>
                             <p class="mb-4">Membersihkan bagian dalam freezer dengan penyemprotan dan defrosting, pengecekan suhu, kelistrikan, dan saluran drain.</p>
                             <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Lihat Detail</a>
@@ -45,7 +45,7 @@
                 <div class="services-item bg-light">
                     <div class="p-4 text-center services-content">
                         <div class="services-content-icon">
-                            <i class="fas fa-user-secret fa-7x mb-4 text-primary"></i>
+                            <i class="fas fa-bucket fa-7x mb-4 text-primary"></i>
                             <h4 class="mb-3">Service Ringan</h4>
                             <p class="mb-4">Layanan service ringan pada unit AC, Kulkas, maupun Freezer termasuk pengerjaan perbaikan yang tidak memerlukan adanya  kegiatan pembongkaran unit secara menyeluruh, atau pengelasan. Contohnya seperti penggantian komponen elektrikal dan mekanikal.</p>
                             <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Lihat Detail</a>
@@ -58,7 +58,7 @@
                 <div class="services-item bg-light">
                     <div class="p-4 text-center services-content">
                         <div class="services-content-icon">
-                            <i class="fa fa-envelope-open fa-7x mb-4 text-primary"></i>
+                            <i class="fa fa-helmet-safety fa-7x mb-4 text-primary"></i>
                             <h4 class="mb-3">Service Berat</h4>
                             <p class="mb-4">Layanan service berat pada unit AC, Kulkas, atau Freezer adalah layanan service dimana ada proses pembongkaran unit secara menyeluruh, hingga ada proses pengelasan. Contohnya seperti penggantian compressor, penambalan kebocoran pada sistem pipa pendingin, atau penggantian unit elektrikal yang masif seperti penggantian control module.</p>
                             <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Lihat Detail</a>
