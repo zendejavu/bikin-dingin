@@ -12,11 +12,11 @@
             </button>
             <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
                 <div class="navbar-nav ms-auto mx-xl-auto p-0">
-                    <a href="/#" class="nav-item nav-link active text-secondary">Beranda</a>
-                    <a href="/#about" class="nav-item nav-link">Tentang</a>
-                    <a href="/#services" class="nav-item nav-link">Layanan</a>
-                    <a href="/order" class="nav-item nav-link">Pemesanan</a>
-                    <a href="/#contact" class="nav-item nav-link">Kontak</a>
+                    <a href="/#" class="nav-item nav-link {{ request()->is('/') ? ' active text-secondary' : '' }}">Beranda</a>
+                    <a href="/#about" class="nav-item nav-link {{ request()->query('#about') ? ' active text-secondary' : '' }}">Tentang</a>
+                    <a href="/#services" class="nav-item nav-link {{ request()->query('#services') ? ' active text-secondary' : '' }}">Layanan</a>
+                    <a href="/order" class="nav-item nav-link {{ request()->is('order*') ? ' active text-secondary' : '' }}">Pemesanan</a>
+                    <a href="/#contact" class="nav-item nav-link {{ request()->query('#contact') ? ' active text-secondary' : '' }}">Kontak</a>
                     <hr class="text-left ml-0 bg-secondary p-0 bg-white">
                 </div>
                 <div class="navbar-nav ms-auto mx-xl-auto p-0 mb-3 navbar-toggler text-white-50" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -36,8 +36,8 @@
                     <span class="text-white-50">Anda memiliki Pertanyaan?</span>
                     <span class="text-secondary">WA: +62 822-4903-7482</span>
                 </div>
-                <div class="d-flex align-items-center justify-content-center ms-4">
-                    <a href="/login" class="btn btn-secondary text-black-50">
+                <div class="d-flex align-items-center justify-content-center ms-4 btn btn-sm btn-secondary px-1 rounded-pill">
+                    <a href="/login" class="btn text-white">
                         <span><i class="fa-solid fa-arrow-right-to-bracket"></i></span>
                         Login
                     </a>
