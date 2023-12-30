@@ -5,6 +5,7 @@
 {{-- @section('nav-title', __('messages.main_page')) --}}
 
 @section('css-plugins')
+    <link href="{{ asset('/') }}assets/css/bootstrap.min.css" rel="stylesheet">
 @endsection
 
 @section('js-plugins')
