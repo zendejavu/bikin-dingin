@@ -8,8 +8,6 @@ class UserController extends Controller
 {
     public function index()
     {
-        // $role = Role::all();
-        // return view('roles.index', compact('role'));
-        return view('index');
+        return view('layouts.main');
     }
 }
