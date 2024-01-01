@@ -17,8 +17,15 @@
 @endsection
 
 @section('form')  
-    <form>
+    <form action="/login" method="POST">
+        @csrf
         <div class="row">
+            @if (session()->has('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <div>{{ session('success') }}</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+            @endif
             <div class="col-lg-6">
                 <div class="mb-4">
 
@@ -28,7 +35,12 @@
                     </label>
 
                     <!-- Input -->
-                    <input type="email" class="form-control" placeholder="Alamat Email Anda">
+                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Alamat Email Anda" value="{{ old('email') }}" autofocus required">
+                    @error('email')
+                        <div id="email" class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
             </div>
 
@@ -54,9 +66,14 @@
 
                     <!-- Input -->
                     <div class="input-group input-group-merge">
-                        <input type="password" class="form-control" autocomplete="off" data-toggle-password-input placeholder="Kata Sandi Anda">
+                        <input type="password" name="password" class="form-control" autocomplete="off" data-toggle-password-input placeholder="Kata Sandi Anda" required>
+                        @error('password')
+                            <div id="password" class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                         
-                        <button type="button" class="input-group-text px-4 text-secondary link-primary" data-toggle-password></button>
+                        <button type="submit" class="input-group-text px-4 text-secondary link-primary" data-toggle-password></button>
                     </div>
                 </div>
             </div>
