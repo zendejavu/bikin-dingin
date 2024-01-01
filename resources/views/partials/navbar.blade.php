@@ -13,13 +13,13 @@
             <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
                 <div class="navbar-nav ms-auto mx-xl-auto p-0">
                     <a href="/#" class="nav-item nav-link {{ request()->is('/') ? ' active text-secondary' : '' }}">Beranda</a>
-                    <a href="/#about" class="nav-item nav-link {{ request()->query('#about') ? ' active text-secondary' : '' }}">Tentang</a>
-                    <a href="/#services" class="nav-item nav-link {{ request()->query('#services') ? ' active text-secondary' : '' }}">Layanan</a>
+                    <a href="/#about" class="nav-item nav-link {{ request()->is('#about') ? ' active text-secondary' : '' }}">Tentang</a>
+                    <a href="/#services" class="nav-item nav-link {{ request()->is('#services') ? ' active text-secondary' : '' }}">Layanan</a>
                     <a href="/order" class="nav-item nav-link {{ request()->is('order*') ? ' active text-secondary' : '' }}">Pemesanan</a>
-                    <a href="/#contact" class="nav-item nav-link {{ request()->query('#contact') ? ' active text-secondary' : '' }}">Kontak</a>
+                    <a href="/#contact" class="nav-item nav-link {{ request()->is('#contact') ? ' active text-secondary' : '' }}">Kontak</a>
                     <hr class="text-left ml-0 bg-secondary p-0 bg-white">
                 </div>
-                <div class="navbar-nav ms-auto mx-xl-auto p-0 mb-3 navbar-toggler text-white-50" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <div class="navbar-nav ms-auto mx-xl-auto p-0 mb-3 navbar-toggler text-white-50">
                     <a href="/login" class="nav-item nav-link">Login</a>
                 </div>
             </div>
