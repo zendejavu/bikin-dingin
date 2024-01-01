@@ -1,8 +1,6 @@
 @extends('index')
 
 @section('title', 'Baru')
-{{-- @section('title', __('messages.dashboard')) --}}
-{{-- @section('nav-title', __('messages.main_page')) --}}
 
 @section('css-plugins')
     <link href="{{ asset('/') }}assets/css/bootstrap.min.css" rel="stylesheet">
@@ -17,7 +15,7 @@
     <!-- Carousel End -->
     
     <!-- Fact Start -->
-    @include('pages.fact')
+    {{-- @include('pages.fact') --}}
     <!-- Fact End -->
 
     <!-- About Start -->
