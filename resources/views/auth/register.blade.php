@@ -2,7 +2,7 @@
 
 @section('title', 'Daftar Akun')
 @section('subtitle')
-    Belum memiliki Akun? Buat Akun Anda sekarang juga
+Belum memiliki Akun? Buat Akun Anda sekarang juga
 @endsection
 
 @section('image')
@@ -14,6 +14,21 @@
     </div>
 @endsection
 
+@section('js_auth')
+    <script>
+        var checker = document.getElementById('agree');
+        var sendbtn = document.getElementById('daftar');
+        // when unchecked or checked, run the function
+        checker.onchange = function(){
+            if(this.checked){
+                sendbtn.disabled = false;
+            } else {
+                sendbtn.disabled = true;
+            }
+        }
+    </script>
+@endsection
+
 @section('link')
     <small class="mb-0 text-muted">
         Apakah Anda telah terdaftar? <a href="/login" class="fw-semibold">Login</a>
@@ -21,7 +36,8 @@
 @endsection
 
 @section('form') 
-    <form>
+    <form action="/register" method="POST">
+        @csrf
         <div class="row">
             <div class="col-lg-6">
                 <div class="mb-4">
@@ -32,10 +48,36 @@
                     </label>
 
                     <!-- Input -->
-                    <input type="text" class="form-control" placeholder="Nama Lengkap Anda">
+                    <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" placeholder="Nama Lengkap Anda" required>
+                    @error('name')
+                        <div id="name" class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
             </div>
             
+            <div class="col-lg-6">
+                <div class="mb-4">
+
+                    <!-- Label -->
+                    <label class="form-label">
+                        Username
+                    </label>
+
+                    <!-- Input -->
+                    <input type="text" id="username" name="username" class="form-control @error('username') is-invalid @enderror" value="{{ old('username') }}" placeholder="Username Anda" required>
+                    @error('username')
+                        <div id="username" class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+            </div>
+        </div> <!-- / .row -->
+
+        <div class="row">
+
             <div class="col-lg-6">
                 <div class="mb-4">
 
@@ -45,12 +87,15 @@
                     </label>
 
                     <!-- Input -->
-                    <input type="email" class="form-control" placeholder="Alamat Email Anda">
+                    <input type="email" id="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" placeholder="Alamat Email Anda" required>
+                    @error('email')                        
+                        <div id="email" class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
             </div>
-        </div> <!-- / .row -->
 
-        <div class="row">
             <div class="col-lg-6">
                 <div class="mb-4">
 
@@ -61,29 +106,17 @@
 
                     <!-- Input -->
                     <div class="input-group input-group-merge">
-                        <input type="password" class="form-control" autocomplete="off" data-toggle-password-input placeholder="Kata Sandi Anda">
-                        
-                        <button type="button" class="input-group-text px-4 text-secondary link-primary" data-toggle-password></button>
+                        <input type="password" id="password" name="password" class="form-control @error('password') is-invalid @enderror" autocomplete="off" data-toggle-password-input placeholder="Kata Sandi Anda" required>
+                        <button type="button" class="input-group-text px-4 text-secondary link-primary @error('password') is-invalid @enderror" data-toggle-password></button>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-lg-6">
-                <div class="mb-4">
-
-                    <!-- Label -->
-                    <label class="form-label">
-                        Konfirmasi Kata Sandi
-                    </label>
-
-                    <!-- Input -->
-                    <div class="input-group input-group-merge">
-                        <input type="password" class="form-control" autocomplete="off" data-toggle-password-input placeholder="Ketikkan Kembali Sandi Anda">
-                        
-                        <button type="button" class="input-group-text px-4 text-secondary link-primary" data-toggle-password></button>
+                @error('password')
+                    <div id="password" class="invalid-feedback">
+                        {{ $message }}
                     </div>
-                </div>
+                @enderror
             </div>
+
         </div> <!-- / .row -->
 
         <div class="form-check">
@@ -98,7 +131,7 @@
         </div>
 
         <!-- Button -->
-        <button type="button" class="btn btn-primary mt-3">
+        <button type="submit" class="btn btn-primary mt-3" id="daftar">
             Daftar
         </button>
     </form>
