@@ -25,7 +25,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mb-3">
                             <li class="breadcrumb-item">
-                                <a href="javascript: void(0);">Layanan Pemesanan</a>
+                                <a href="/order">Layanan Pemesanan</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">Servis AC Ringan</li>
                         </ol>
