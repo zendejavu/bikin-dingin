@@ -14,21 +14,6 @@ Belum memiliki Akun? Buat Akun Anda sekarang juga
     </div>
 @endsection
 
-@section('js_auth')
-    <script>
-        var checker = document.getElementById('agree');
-        var sendbtn = document.getElementById('daftar');
-        // when unchecked or checked, run the function
-        checker.onchange = function(){
-            if(this.checked){
-                sendbtn.disabled = false;
-            } else {
-                sendbtn.disabled = true;
-            }
-        }
-    </script>
-@endsection
-
 @section('link')
     <small class="mb-0 text-muted">
         Apakah Anda telah terdaftar? <a href="/login" class="fw-semibold">Login</a>
@@ -77,7 +62,6 @@ Belum memiliki Akun? Buat Akun Anda sekarang juga
         </div> <!-- / .row -->
 
         <div class="row">
-
             <div class="col-lg-6">
                 <div class="mb-4">
 
@@ -131,7 +115,7 @@ Belum memiliki Akun? Buat Akun Anda sekarang juga
         </div>
 
         <!-- Button -->
-        <button type="submit" class="btn btn-primary mt-3" id="daftar">
+        <button type="submit" class="btn btn-primary mt-3">
             Daftar
         </button>
     </form>
