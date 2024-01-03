@@ -17,13 +17,43 @@
                     <a href="/#services" class="nav-item nav-link {{ request()->is('#services') ? ' active text-secondary' : '' }}">Layanan</a>
                     <a href="/order" class="nav-item nav-link {{ request()->is('order*') ? ' active text-secondary' : '' }}">Pemesanan</a>
                     <a href="/#contact" class="nav-item nav-link {{ request()->is('#contact') ? ' active text-secondary' : '' }}">Kontak</a>
-                    <hr class="text-left ml-0 bg-secondary p-0 bg-white">
                 </div>
-                <div class="navbar-nav ms-auto mx-xl-auto p-0 mb-3 navbar-toggler text-white-50">
-                    <a href="/login" class="nav-item nav-link">Login</a>
+                {{-- <div class="navbar-nav ms-auto mx-xl-auto p-0 mb-3 navbar-toggler text-white-50"> --}}
+                <div class="navbar-nav">
+                    {{-- <hr class="text-left ml-0 bg-secondary p-0 bg-white"> --}}
+                    <hr class="dropdown-divider bg-secondary">
+                    @auth
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Selamat Datang, {{ auth()->user()->username }}</a>
+                        <div class="dropdown-menu rounded">
+                            <a href="/" class="dropdown-item"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+                            <hr class="dropdown-divider">
+                            <form action="/logout" method="POST">
+                                @csrf
+                                <button type="submit" class="dropdown-item"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                            </form>
+                            {{-- <a href="/logout" class="dropdown-item"><i class="fa-solid fa-right-from-bracket"></i>Logout</a> --}}
+                            {{-- <a href="/logout" class="nav-item nav-link">Logout</a> --}}
+                        </div>
+                    </div>
+                    @else
+                    <a href="/login" class="nav-item nav-link"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+                    @endauth
                 </div>
             </div>
-            <div class="d-none d-xl-flex flex-shirink-0">
+            {{-- <div class="d-none d-xl-flex flex-shirink-0">
+                @auth
+                 <div class="d-flex flex-column pe-4">
+                     <div class="nav-item dropdown">
+                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Selamat Datang, {{ auth()->user()->name }}</a>
+                         <div class="dropdown-menu rounded">
+                             <a href="blog.html" class="dropdown-item">My Dashboard</a>
+                             <hr class="dropdown-divider">
+                             <a href="/logout" class="dropdown-item">Logout</a>
+                         </div>
+                     </div>
+                 </div>
+                @else                    
                 <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
                     <a href="https://wa.me/+6282249037482" target="_blank" class="position-relative animated tada infinite">
                         <i class="fa-brands fa-whatsapp text-white fa-2x"></i>
@@ -42,7 +72,9 @@
                         Login
                     </a>
                 </div>
-            </div>
+                @endauth
+
+            </div> --}}
         </nav>
     </div>
 </div>
