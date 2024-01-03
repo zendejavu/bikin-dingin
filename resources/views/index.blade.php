@@ -42,17 +42,17 @@
         <!-- Spinner End -->
 
         <!-- Topbar Start -->
-        @include('partials.topbar')
+        @include('layouts.topbar')
         <!-- Topbar End -->
 
         <!-- Navbar Start -->
-        @include('partials.navbar')
+        @include('layouts.navbar')
         <!-- Navbar End -->
 
         @yield('container')
 
         <!-- Footer Start -->
-        @include('partials.footer')
+        @include('layouts.footer')
         <!-- Footer End -->
 
         <!-- Back to Top -->
