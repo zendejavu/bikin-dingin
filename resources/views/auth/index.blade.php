@@ -42,7 +42,7 @@
                     </label>
 
                     <!-- Input -->
-                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Alamat Email Anda" value="{{ old('email') }}" autofocus required">
+                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Alamat Email Anda" value="{{ old('email') }}" autofocus required>
                     @error('email')
                         <div id="email" class="invalid-feedback">
                             {{ $message }}
@@ -80,7 +80,7 @@
                             </div>
                         @enderror
                         
-                        <button type="submit" class="input-group-text px-4 text-secondary link-primary" data-toggle-password></button>
+                        <button type="button" class="input-group-text px-4 text-secondary link-primary" data-toggle-password></button>
                     </div>
                 </div>
             </div>
@@ -98,7 +98,7 @@
         </div>
 
         <!-- Button -->
-        <button type="button" class="btn btn-primary mt-3">
+        <button type="submit" class="btn btn-primary mt-3">
             Masuk
         </button>
     </form>
