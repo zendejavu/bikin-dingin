@@ -30,7 +30,7 @@
         <link href="{{ asset('/') }}assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
         <!-- Favicon -->
-        <link rel="icon" href="{{ asset('/') }}assets/img/logo.ico" sizes="any">
+        <link rel="icon" href="{{ asset('/') }}favicon.ico" sizes="any">
 
     </head>
 
