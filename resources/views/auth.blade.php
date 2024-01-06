@@ -152,7 +152,7 @@
 
                     <!-- Brand -->
                     <a class="navbar-brand mb-auto" href="/">
-                        <img src="{{ asset('/') }}assets/img/bikin-dingin.png" class="navbar-brand-img logo-light logo-large" alt="..." width="165" height="45">
+                        <img src="{{ asset('/') }}assets/img/logo-large-light.svg" class="navbar-brand-img logo-light logo-large" alt="..." width="165" height="45">
                     </a>
 
                     <div>
