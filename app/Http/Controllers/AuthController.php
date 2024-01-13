@@ -25,7 +25,7 @@ class AuthController extends Controller
     {
         return view('auth.reset');
     }
-    
+
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -36,38 +36,51 @@ class AuthController extends Controller
         ]);
 
         $validated['password'] = bcrypt($validated['password']);
+        $validated['role'] = 'Customer';
+        $validated['phone'] = '';
+        $validated['province'] = '';
+        $validated['city'] = '';
+        $validated['subdistrict'] = '';
+        $validated['village'] = '';
+        $validated['address'] = '';
+        $validated['zip'] = '';
+        $validated['bio'] = '';
 
         User::create($validated);
-        
+
         return redirect('/login')->with('success', 'Akun Anda telah terdaftar');
     }
 
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([
-            'email' => ['required', 'email:dns'],
+            'username' => ['required'],
             'password' => ['required'],
         ]);
- 
+
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
- 
-            return redirect()->intended('/admin');
+
+            if (Auth::user()->role === 'admin') {
+                return redirect()->intended('/admin');
+            } elseif (Auth::user()->role === 'customer') {
+                return redirect()->intended('/');
+            }
         }
- 
+
         return back()->with([
             'loginError' => 'Login Failed',
-        ])->onlyInput('email');
+        ])->onlyInput('username');
     }
 
     public function logout()
     {
         Auth::logout();
- 
+
         request()->session()->invalidate();
-    
+
         request()->session()->regenerateToken();
-    
+
         return redirect('/login');
     }
 }

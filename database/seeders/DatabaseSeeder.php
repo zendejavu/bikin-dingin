@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+use \App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,11 +14,45 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        User::factory()->create([
+            'name' => 'Arsan Kumala Jaya',
+            'username' => 'arsan',
+            'email' => 'arsanptik05@gmail.com',
+            'role' => 'admin',
+            'phone' => '082291610212',
+            'province' => '',
+            'city' => '',
+            'subdistrict' => '',
+            'village' => '',
+            'address' => '',
+            'zip' => '',
+            'bio' => '',
+            'password' => Hash::make('admin')
+        ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        User::factory()->create([
+            'name' => 'Ali Ahmad',
+            'username' => 'ali',
+            'email' => 'ali@gmail.com',
+            'role' => 'customer',
+            'phone' => '082291610212',
+            'province' => '',
+            'city' => '',
+            'subdistrict' => '',
+            'village' => '',
+            'address' => '',
+            'zip' => '',
+            'bio' => '',
+            'password' => Hash::make('admin')
+        ]);
+
+        User::factory(10)->create();
+
+        $this->call([
+            DevicesSeeder::class,
+            ProblemsSeeder::class,
+            OrderSeeder::class
+        ]);
+
     }
 }
