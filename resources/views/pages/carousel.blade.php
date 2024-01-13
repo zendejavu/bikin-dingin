@@ -12,8 +12,8 @@
                         <h6 class="text-secondary h4 animated fadeInUp">Bikin Urusan Pendinginmu Jadi Lebih Mudah</h6>
                         <h1 class="text-white display-1 mb-4 animated fadeInRight">Solusi untuk masalah AC/Kulkas/Freezer</h1>
                         <p class="mb-4 text-white fs-5 animated fadeInDown">Memberikan kesan ke pemilik perangkat pendingin kalau melakukan perawatan perangkat pendingin mereka tidak perlu ribet, dan melakukan perawatan berkala pada perangkat pendingin mereka itu penting.</p>
-                        <a href="" class="me-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft">Read More</button></a>
-                        <a href="" class="ms-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn2 animated fadeInRight">Contact Us</button></a>
+                        <a href="" class="me-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft">Lihat Detail</button></a>
+                        <a href="" class="ms-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn2 animated fadeInRight">Pesan Sekarang</button></a>
                     </div>
                 </div>
             </div>
@@ -23,8 +23,8 @@
                     <div class="container carousel-content">
                         <h6 class="text-secondary h4 animated fadeInUp">Bikin Urusan Pendinginmu Jadi Lebih Mudah</h6>
                         <h1 class="text-white display-1 mb-4 animated fadeInLeft">Solusi untuk masalah AC/Kulkas/Freezer</p>
-                        <a href="" class="me-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft">Read More</button></a>
-                        <a href="" class="ms-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn2 animated fadeInRight">Contact Us</button></a>
+                        <a href="" class="me-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft">Lihat Detail</button></a>
+                        <a href="" class="ms-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn2 animated fadeInRight">Pesan Sekarang</button></a>
                     </div>
                 </div>
             </div>

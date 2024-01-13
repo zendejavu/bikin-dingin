@@ -41,7 +41,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".9s">
                 <div class="services-item bg-light">
                     <div class="p-4 text-center services-content">
                         <div class="services-content-icon">
@@ -54,7 +54,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="1.1s">
                 <div class="services-item bg-light">
                     <div class="p-4 text-center services-content">
                         <div class="services-content-icon">
