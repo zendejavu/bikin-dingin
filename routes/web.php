@@ -5,7 +5,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OrderController;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Models\Devices;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,17 +21,32 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 //User Route
 Route::get('/', [UserController::class, 'index']);
-Route::get('/admin', [AdminController::class, 'index'])->middleware('auth');
+Route::get('admin', [AdminController::class, 'index'])->middleware('auth');
+Route::get('account', [AdminController::class, 'account'])->middleware('auth');
+Route::get('inbox', [AdminController::class, 'inbox'])->middleware('auth');
+Route::get('read-mail', [AdminController::class, 'read_mail'])->middleware('auth');
+Route::get('chat', [AdminController::class, 'chat'])->middleware('auth');
+
+//Customer Route
+Route::get('my-account', function () {
+    return view('customer.my_account');
+})->middleware('auth');
 
 //Auth Route
-Route::get('/login', [AuthController::class, 'index'])->name('login')->middleware('guest');
-Route::post('/login', [AuthController::class, 'authenticate']);
-Route::post('/logout', [AuthController::class, 'logout']);
+Route::get('login', [AuthController::class, 'index'])->name('login')->middleware('guest');
+Route::post('login', [AuthController::class, 'authenticate']);
+Route::post('logout', [AuthController::class, 'logout']);
 
-Route::get('/register', [AuthController::class, 'register']);
-Route::post('/register', [AuthController::class, 'store']);
-Route::get('/reset-pass', [AuthController::class, 'reset_pass']);
+Route::get('register', [AuthController::class, 'register']);
+Route::post('register', [AuthController::class, 'store']);
+Route::get('reset-pass', [AuthController::class, 'reset_pass']);
 
-//User Route
-Route::get('/order', [OrderController::class, 'index']);
-Route::get('/input-order', [OrderController::class, 'create']);
+//Order Route
+Route::get('order', [OrderController::class, 'index']);
+Route::post('order', [OrderController::class, 'store']);
+Route::get('history', [OrderController::class, 'history'])->middleware('auth');
+
+Route::post('problems', function (Request $request) {
+    $problems = Devices::find($request->perangkat)->problems;
+    return $problems;
+});
