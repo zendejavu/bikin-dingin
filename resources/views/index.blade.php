@@ -7,7 +7,7 @@
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
-        {{-- @yield('meta') --}}
+        @yield('meta')
 
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,20 +17,18 @@
         <!-- Icon Font Stylesheet -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
+        
+        <!-- Libraries Stylesheet -->
+        <link href="{{ asset('assets/lib/animate/animate.min.css') }}" rel="stylesheet">
         @yield('css-plugins')
         
         <!-- Customized Bootstrap Stylesheet -->
         
         <!-- Template Stylesheet -->
-        <link href="{{ asset('/') }}assets/css/style.css" rel="stylesheet">
-
-        <!-- Libraries Stylesheet -->
-        <link href="{{ asset('/') }}assets/lib/animate/animate.min.css" rel="stylesheet">
-        <link href="{{ asset('/') }}assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 
         <!-- Favicon -->
-        <link rel="icon" href="{{ asset('/') }}favicon.ico" sizes="any">
+        <link rel="icon" href="{{ asset('favicon.ico') }}" sizes="any" type="image/x-icon">
 
     </head>
 
@@ -61,14 +59,14 @@
         <!-- JavaScript Libraries -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="{{ asset('/') }}assets/lib/wow/wow.min.js"></script>
-        <script src="{{ asset('/') }}assets/lib/easing/easing.min.js"></script>
-        <script src="{{ asset('/') }}assets/lib/waypoints/waypoints.min.js"></script>
-        <script src="{{ asset('/') }}assets/lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="{{ asset('assets/lib/wow/wow.min.js') }}"></script>
+        <script src="{{ asset('assets/lib/easing/easing.min.js') }}"></script>
+        <script src="{{ asset('assets/lib/waypoints/waypoints.min.js') }}"></script>
+        <script src="{{ asset('assets/lib/owlcarousel/owl.carousel.min.js') }}"></script>
         @yield('js-plugins')
     
         <!-- Template Javascript -->
-        <script src="assets/js/main.js"></script>
+        <script src="{{ asset('assets/js/main.js') }}"></script>
     
     </body>
     
