@@ -38,13 +38,13 @@
 
                     <!-- Label -->
                     <label class="form-label">
-                        Alamat Email
+                        Username
                     </label>
 
                     <!-- Input -->
-                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Alamat Email Anda" value="{{ old('email') }}" autofocus required>
-                    @error('email')
-                        <div id="email" class="invalid-feedback">
+                    <input type="username" name="username" class="form-control @error('username') is-invalid @enderror" placeholder="Username Anda" value="{{ old('username') }}" autofocus required>
+                    @error('username')
+                        <div id="username" class="invalid-feedback">
                             {{ $message }}
                         </div>
                     @enderror

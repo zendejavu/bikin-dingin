@@ -5,6 +5,21 @@
 Belum memiliki Akun? Buat Akun Anda sekarang juga
 @endsection
 
+@section('js-plugins')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('input:checkbox').click(function () {
+        if ($(this).is(':checked')) {
+            $("#register").prop("disabled", false);
+        } else {
+            $("#register").prop("disabled", true);
+        }
+    });
+});
+</script>
+@endsection
+
 @section('image')
     {{-- <div class="bg-size-cover bg-position-center bg-repeat-no-repeat overlay overlay-dark overlay-50 vh-100 me-n4" style="background-image: url({{ asset('/assets/img/sign-up-cover.jpeg') }});"></div> --}}
     <div class="text-center">
@@ -21,7 +36,7 @@ Belum memiliki Akun? Buat Akun Anda sekarang juga
 @endsection
 
 @section('form') 
-    <form action="/register" method="POST">
+    <form action="register" method="POST">
         @csrf
         <div class="row">
             <div class="col-lg-6">
@@ -115,7 +130,7 @@ Belum memiliki Akun? Buat Akun Anda sekarang juga
         </div>
 
         <!-- Button -->
-        <button type="submit" class="btn btn-primary mt-3">
+        <button type="submit" class="btn btn-primary mt-3" id="register" disabled>
             Daftar
         </button>
     </form>

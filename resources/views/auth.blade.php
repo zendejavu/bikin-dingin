@@ -152,6 +152,7 @@
 
                     <!-- Brand -->
                     <a class="navbar-brand mb-auto" href="/">
+                        <img src="{{ asset('/') }}assets/img/logo-large-dark.svg" class="navbar-brand-img logo-dark logo-large" alt="..." width="165" height="45">
                         <img src="{{ asset('/') }}assets/img/logo-large-light.svg" class="navbar-brand-img logo-light logo-large" alt="..." width="165" height="45">
                     </a>
 
@@ -189,5 +190,6 @@
         <!-- JAVASCRIPT-->
         <!-- Theme JS -->
         <script src="{{ asset('/') }}/assets/js/theme.bundle.js"></script>    
+        @yield('js-plugins')
     </body>
 </html>
