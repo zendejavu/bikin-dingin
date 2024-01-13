@@ -1,8 +1,6 @@
 @extends('index')
 
-@section('title', 'Input Order')
-{{-- @section('title', __('messages.dashboard')) --}}
-{{-- @section('nav-title', __('messages.main_page')) --}}
+@section('title', 'Input Pemesanan')
 
 @section('css-plugins')
     <link href="{{ asset('/') }}assets/css/bootstrap.min.css" rel="stylesheet">
