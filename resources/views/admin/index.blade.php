@@ -6,9 +6,12 @@
 @endsection
 
 @section('js-plugins')
+<script src="{{ asset('assets/js/list.bundle.js') }}"></script>
+<script src="{{ asset('assets/js/chart.js.bundle.js') }}"></script>
 @endsection
 
 @section('container')
+<div class="container-fluid">
     <!-- Title -->
     <h1 class="h2">Dashboard</h1>
 
@@ -27,20 +30,18 @@
                                         <!-- Title -->
                                         <h5 class="d-flex align-items-center text-uppercase text-muted fw-semibold mb-2">
                                             <span class="legend-circle-sm bg-success"></span>
-
-                                                                                                    Income
-                                                                                                
+                                            Income
                                         </h5>
 
                                         <!-- Subtitle -->
                                         <h2 class="mb-0">
-                                                                                                $3,240
-                                                                                            </h2>
+                                            $3,240
+                                        </h2>
 
                                         <!-- Comment -->
                                         <p class="fs-6 text-muted mb-0">
-                                                                                                No additional income
-                                                                                            </p>
+                                            No additional income
+                                        </p>
                                     </div>
 
                                     <span class="text-primary">
@@ -82,20 +83,18 @@
                                         <!-- Title -->
                                         <h5 class="d-flex align-items-center text-uppercase text-muted fw-semibold mb-2">
                                             <span class="legend-circle-sm bg-danger"></span>
-
-                                                                                                    Expense
-                                                                                                
+                                            Expense
                                         </h5>
 
                                         <!-- Subtitle -->
                                         <h2 class="mb-0">
-                                                                                                $1,500
-                                                                                            </h2>
+                                            $1,500
+                                        </h2>
 
                                         <!-- Comment -->
                                         <p class="fs-6 text-muted mb-0 text-truncate">
-                                                                                                + $6.50 bank charges fee
-                                                                                            </p>
+                                            + $6.50 bank charges fee
+                                        </p>
                                     </div>
 
                                     <span class="text-primary">
@@ -132,13 +131,13 @@
 
                                     <!-- Title -->
                                     <h5 class="text-uppercase text-muted fw-semibold mb-2">
-                                                                                        Total
-                                                                                    </h5>
+                                        Total
+                                    </h5>
 
                                     <!-- Subtitle -->
                                     <h2 class="mb-0">
-                                                                                        $74,925
-                                                                                    </h2>
+                                        $74,925
+                                    </h2>
 
                                     <!-- Comment -->
                                     <p class="fs-6 text-muted mb-0 text-truncate">
@@ -148,14 +147,8 @@
                                             <svg viewBox="0 0 24 24" height="10" width="10" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M23.25 12.75L23.25 6 16.5 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
                                                 <path d="M23.25,6l-7.939,7.939a1.5,1.5,0,0,1-2.122,0l-3.128-3.128a1.5,1.5,0,0,0-2.122,0L.75,18" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-                                            </svg>
-
-                                                                                                    12%
-                                                                                                
-                                        </span>
-
-                                                                                            from $65,934
-                                                                                        
+                                            </svg>12%                                           
+                                        </span>from $65,934
                                     </p>
                                 </div>
 
@@ -182,10 +175,9 @@
 
                                     <!-- Title -->
                                     <h5 class="text-uppercase text-muted fw-semibold mb-2 d-flex align-items-center">
-
-                                                                                            Pageviews
+                                        Pageviews
                                                 
-                                                                                            <!-- Icon -->
+                                        <!-- Icon -->
                                         <a href="javascript: void(0);" class="ms-2 text-secondary" data-bs-toggle="tooltip" title="Pageviews is a metric defined as the total number of pages viewed.">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="14" width="14">
                                                 <path d="M12,0A12,12,0,1,0,24,12,12,12,0,0,0,12,0Zm.25,5a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,12.25,5ZM14.5,18.5h-4a1,1,0,0,1,0-2h.75a.25.25,0,0,0,.25-.25v-4.5a.25.25,0,0,0-.25-.25H10.5a1,1,0,0,1,0-2h1a2,2,0,0,1,2,2v4.75a.25.25,0,0,0,.25.25h.75a1,1,0,0,1,0,2Z" style="fill: currentColor"/>
@@ -195,8 +187,8 @@
 
                                     <!-- Subtitle -->
                                     <h2 class="mb-0">
-                                                                                        123,598
-                                                                                    </h2>
+                                        123,598
+                                    </h2>
 
                                     <!-- Comment -->
                                     <p class="fs-6 text-muted mb-0">
@@ -207,12 +199,10 @@
                                                 <path d="M23.25 11.25L23.25 18 16.5 18" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
                                                 <path d="M23.25,18l-7.939-7.939a1.5,1.5,0,0,0-2.122,0l-3.128,3.128a1.5,1.5,0,0,1-2.122,0L.75,6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
                                             </svg>
-
-                                                                                                    9.2%
+                                            9.2%
                                                                                                 
                                         </span>
-
-                                                                                            from 134,969
+                                        from 134,969
                                                                                         
                                     </p>
                                 </div>
@@ -358,5 +348,6 @@
         </div>
     </div>
     <!-- / .row -->        
+</div>
 @endsection
 

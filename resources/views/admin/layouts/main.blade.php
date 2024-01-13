@@ -3,11 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="BikinDingin" name="Arsan Kumala Jaya">
+    {{-- <meta content="BikinDingin" name="Arsan Kumala Jaya"> --}}
+    <meta content="Webinning" name="author">
 
     <!-- Theme CSS -->
-    <link rel="stylesheet" href="/assets/css/theme.bundle.css" id="stylesheetLTR">
-    <link rel="stylesheet" href="/assets/css/theme.rtl.bundle.css" id="stylesheetRTL">
+    <link rel="stylesheet" href="{{ asset('assets/css/theme.bundle.css') }}" id="stylesheetLTR">
+    <link rel="stylesheet" href="{{ asset('assets/css/theme.rtl.bundle.css') }}" id="stylesheetRTL">
+    @yield('css-plugins')
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap">
@@ -19,9 +21,12 @@
     </noscript>
 
     @include('admin.layouts.theme')
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     
     <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="{{ asset('favicon.ico') }}" sizes="any">
 
     <!-- Page Title -->
     <title>@yield('title') | BikinDingin</title>
@@ -55,9 +60,7 @@
 
         <!-- HEADER -->
         @include('admin.layouts.header')
-        <div class="container-fluid">
-            @yield('container')
-        </div>
+        @yield('container')
         <!-- / .container-fluid -->
 
         <!-- Footer -->
@@ -68,7 +71,8 @@
 
     <!-- JAVASCRIPT-->
     <!-- Theme JS -->
-    <script src="/assets/js/theme.bundle.js"></script>
+    <script src="{{ asset('assets/js/theme.bundle.js') }}"></script>
+    @yield('js-plugins')
 </body>
 </html>
 
