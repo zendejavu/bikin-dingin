@@ -33,14 +33,14 @@
 
             <section class="d-block wow fadeIn" data-wow-delay=".5s" id="ac">
                 <div class="row g-4 justify-content-center mb-3">
-                    <div class="col-xl-4 g-5">
+                    <div class="col-md-4 g-5">
     
                         <!-- Card -->
                         <div class="card border-0 py-6 px-4 mb-6 mb-xl-3">
                             <div class="card-body">
                                 <h2 class="card-title h5 text-uppercase text-muted text-center mb-3">Maintenance AC</h2>
                                 <h3 class="card-text display-6 text-center">Rp50k
-                                    <span class="fs-5 fw-normal text-muted">/servis</span>
+                                    {{-- <span class="fs-5 fw-normal text-muted">/servis</span> --}}
                                 </h3>
     
                                 <!-- Divider -->
@@ -71,14 +71,14 @@
                         </div>
                     </div>
     
-                    <div class="col-xl-4 g-5">
+                    <div class="col-md-4 g-5">
     
                         <!-- Card -->
                         <div class="card border-0 py-6 px-4 mb-6 mb-xl-3 text-bg-primary bg-primary">
                             <div class="card-body">
                                 <h2 class="card-title h5 text-uppercase text-white-50 text-center mb-3">Service AC Ringan</h2>
                                 <h3 class="card-text display-6 text-center text-light">Rp250k
-                                    <span class="fs-5 fw-normal opacity-70">/servis</span>
+                                    {{-- <span class="fs-5 fw-normal opacity-70">/servis</span> --}}
                                 </h3>
     
                                 <!-- Divider -->
@@ -109,14 +109,14 @@
                         </div>
                     </div>
     
-                    <div class="col-xl-4 g-5">
+                    <div class="col-md-4 g-5">
     
                         <!-- Card -->
                         <div class="card border-0 py-6 px-4 mb-6 mb-xl-3">
                             <div class="card-body">
                                 <h2 class="card-title h5 text-uppercase text-muted text-center mb-3">Service AC Berat</h2>
                                 <h3 class="card-text display-6 text-center">Rp400k
-                                    <span class="fs-5 fw-normal text-muted">/servis</span>
+                                    {{-- <span class="fs-5 fw-normal text-muted">/servis</span> --}}
                                 </h3>
     
                                 <!-- Divider -->
@@ -152,14 +152,14 @@
 
             <section class="d-none wow fadeIn" data-wow-delay=".5s" id="kulkas">
                 <div class="row g-4 justify-content-center mb-3">
-                    <div class="col-xl-4 g-5">
+                    <div class="col-md-4 g-5">
     
                         <!-- Card -->
                         <div class="card border-0 py-6 px-4 mb-6 mb-xl-3">
                             <div class="card-body">
                                 <h2 class="card-title h5 text-uppercase text-muted text-center mb-3">Maintenance Kulkas</h2>
                                 <h3 class="card-text display-6 text-center">Rp50k
-                                    <span class="fs-5 fw-normal text-muted">/servis</span>
+                                    {{-- <span class="fs-5 fw-normal text-muted">/servis</span> --}}
                                 </h3>
     
                                 <!-- Divider -->
@@ -190,14 +190,14 @@
                         </div>
                     </div>
     
-                    <div class="col-xl-4 g-5">
+                    <div class="col-md-4 g-5">
     
                         <!-- Card -->
                         <div class="card border-0 py-6 px-4 mb-6 mb-xl-3 text-bg-primary bg-primary">
                             <div class="card-body">
                                 <h2 class="card-title h5 text-uppercase text-white-50 text-center mb-3">Service Kulkas Ringan</h2>
                                 <h3 class="card-text display-6 text-center text-light">Rp250k
-                                    <span class="fs-5 fw-normal opacity-70">/servis</span>
+                                    {{-- <span class="fs-5 fw-normal opacity-70">/servis</span> --}}
                                 </h3>
     
                                 <!-- Divider -->
@@ -228,14 +228,14 @@
                         </div>
                     </div>
     
-                    <div class="col-xl-4 g-5">
+                    <div class="col-md-4 g-5">
     
                         <!-- Card -->
                         <div class="card border-0 py-6 px-4 mb-6 mb-xl-3">
                             <div class="card-body">
                                 <h2 class="card-title h5 text-uppercase text-muted text-center mb-3">Service Kulkas Berat</h2>
                                 <h3 class="card-text display-6 text-center">Rp400k
-                                    <span class="fs-5 fw-normal text-muted">/servis</span>
+                                    {{-- <span class="fs-5 fw-normal text-muted">/servis</span> --}}
                                 </h3>
     
                                 <!-- Divider -->
@@ -271,14 +271,14 @@
 
             <section class="d-none wow fadeIn" data-wow-delay=".5s" id="freezer">
                 <div class="row g-4 justify-content-center mb-3">
-                    <div class="col-xl-4 g-5">
+                    <div class="col-md-4 g-5">
     
                         <!-- Card -->
                         <div class="card border-0 py-6 px-4 mb-6 mb-xl-3">
                             <div class="card-body">
                                 <h2 class="card-title h5 text-uppercase text-muted text-center mb-3">Maintenance Freezer</h2>
                                 <h3 class="card-text display-6 text-center">Rp50k
-                                    <span class="fs-5 fw-normal text-muted">/servis</span>
+                                    {{-- <span class="fs-5 fw-normal text-muted">/servis</span> --}}
                                 </h3>
     
                                 <!-- Divider -->
@@ -309,14 +309,14 @@
                         </div>
                     </div>
     
-                    <div class="col-xl-4 g-5">
+                    <div class="col-md-4 g-5">
     
                         <!-- Card -->
                         <div class="card border-0 py-6 px-4 mb-6 mb-xl-3 text-bg-primary bg-primary">
                             <div class="card-body">
                                 <h2 class="card-title h5 text-uppercase text-white-50 text-center mb-3">Service Freezer Ringan</h2>
                                 <h3 class="card-text display-6 text-center text-light">Rp250k
-                                    <span class="fs-5 fw-normal opacity-70">/servis</span>
+                                    {{-- <span class="fs-5 fw-normal opacity-70">/servis</span> --}}
                                 </h3>
     
                                 <!-- Divider -->
@@ -347,14 +347,14 @@
                         </div>
                     </div>
     
-                    <div class="col-xl-4 g-5">
+                    <div class="col-md-4 g-5">
     
                         <!-- Card -->
                         <div class="card border-0 py-6 px-4 mb-6 mb-xl-3">
                             <div class="card-body">
                                 <h2 class="card-title h5 text-uppercase text-muted text-center mb-3">Service Freezer Berat</h2>
                                 <h3 class="card-text display-6 text-center">Rp400k
-                                    <span class="fs-5 fw-normal text-muted">/servis</span>
+                                    {{-- <span class="fs-5 fw-normal text-muted">/servis</span> --}}
                                 </h3>
     
                                 <!-- Divider -->
