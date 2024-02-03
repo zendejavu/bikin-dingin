@@ -33,7 +33,7 @@
 
             <section class="d-block wow fadeIn" data-wow-delay=".5s" id="ac">
                 <div class="row g-4 justify-content-center mb-3">
-                    <div class="col-md-4 g-5">
+                    <div class="col-12 col-lg-4 col-sm-12 g-5">
     
                         <!-- Card -->
                         <div class="card border-0 py-6 px-4 mb-6 mb-xl-3">
@@ -71,7 +71,7 @@
                         </div>
                     </div>
     
-                    <div class="col-md-4 g-5">
+                    <div class="col-12 col-lg-4 col-sm-12 g-5">
     
                         <!-- Card -->
                         <div class="card border-0 py-6 px-4 mb-6 mb-xl-3 text-bg-primary bg-primary">
@@ -109,7 +109,7 @@
                         </div>
                     </div>
     
-                    <div class="col-md-4 g-5">
+                    <div class="col-12 col-lg-4 col-sm-12 g-5">
     
                         <!-- Card -->
                         <div class="card border-0 py-6 px-4 mb-6 mb-xl-3">
@@ -152,7 +152,7 @@
 
             <section class="d-none wow fadeIn" data-wow-delay=".5s" id="kulkas">
                 <div class="row g-4 justify-content-center mb-3">
-                    <div class="col-md-4 g-5">
+                    <div class="col-12 col-lg-4 col-sm-12 g-5">
     
                         <!-- Card -->
                         <div class="card border-0 py-6 px-4 mb-6 mb-xl-3">
@@ -190,7 +190,7 @@
                         </div>
                     </div>
     
-                    <div class="col-md-4 g-5">
+                    <div class="col-12 col-lg-4 col-sm-12 g-5">
     
                         <!-- Card -->
                         <div class="card border-0 py-6 px-4 mb-6 mb-xl-3 text-bg-primary bg-primary">
@@ -228,7 +228,7 @@
                         </div>
                     </div>
     
-                    <div class="col-md-4 g-5">
+                    <div class="col-12 col-lg-4 col-sm-12 g-5">
     
                         <!-- Card -->
                         <div class="card border-0 py-6 px-4 mb-6 mb-xl-3">
@@ -271,7 +271,7 @@
 
             <section class="d-none wow fadeIn" data-wow-delay=".5s" id="freezer">
                 <div class="row g-4 justify-content-center mb-3">
-                    <div class="col-md-4 g-5">
+                    <div class="col-12 col-lg-4 col-sm-12 g-5">
     
                         <!-- Card -->
                         <div class="card border-0 py-6 px-4 mb-6 mb-xl-3">
@@ -309,7 +309,7 @@
                         </div>
                     </div>
     
-                    <div class="col-md-4 g-5">
+                    <div class="col-12 col-lg-4 col-sm-12 g-5">
     
                         <!-- Card -->
                         <div class="card border-0 py-6 px-4 mb-6 mb-xl-3 text-bg-primary bg-primary">
@@ -347,7 +347,7 @@
                         </div>
                     </div>
     
-                    <div class="col-md-4 g-5">
+                    <div class="col-12 col-lg-4 col-sm-12 g-5">
     
                         <!-- Card -->
                         <div class="card border-0 py-6 px-4 mb-6 mb-xl-3">

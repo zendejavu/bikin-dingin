@@ -36,19 +36,22 @@
                     @auth
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            {{ auth()->user()->username }}
+                            {{ auth()->user()->name }}
                         </a>
                         <div class="dropdown-menu dropdown-menu-end rounded">
-                            <a href="/my-account" class="dropdown-item"><i class="fa-solid fa-user"></i> Informasi Akun</a>
+                            <a href="/my-account" class="dropdown-item"><i class="fa-solid fa-user me-2"></i>Profil</a>
                             <hr class="dropdown-divider">
                             <form action="/logout" method="POST">
                                 @csrf
-                                <button type="submit" class="dropdown-item"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                                <button type="submit" class="dropdown-item"><i class="fa-solid fa-right-from-bracket me-2"></i>Logout</button>
                             </form>
                         </div>
                     </div>
                     @else
-                    <a href="/login" class="nav-item nav-link"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="nav-item nav-link"><i class="fa-solid fa-user-plus me-2"></i>Register</a>
+                        @endif
+                    <a href="{{ route('login') }}" class="nav-item nav-link"><i class="fa-solid fa-right-to-bracket me-2"></i>Login</a>
                     @endauth
                 </div>
             </div>
