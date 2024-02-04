@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\User;
 
 class ProfileController extends Controller
 {
@@ -16,7 +17,8 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
-        return view('profile.edit', [
+        // return view('profile.edit', [
+        return view('customer.my_account', [
             'user' => $request->user(),
         ]);
     }
@@ -24,17 +26,42 @@ class ProfileController extends Controller
     /**
      * Update the user's profile information.
      */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
+    // public function update(ProfileUpdateRequest $request): RedirectResponse
+    // {
+    //     $request->user()->fill($request->validated());
+
+    //     if ($request->user()->isDirty('email')) {
+    //         $request->user()->email_verified_at = null;
+    //     }
+
+    //     $request->user()->save();
+
+    //     return Redirect::route('profile.edit')->with('status', 'profile-updated');
+    // }
+
+    public function update(Request $request): RedirectResponse
     {
-        $request->user()->fill($request->validated());
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
-        }
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'phone' => 'required|string',
+            'address' => 'required',
+            'zip' => 'required|integer',
+        ], [
+            'required' => 'Inputan :attribute masih kosong.',
+            'integer' => 'Inputan :attribute harus format angka.'
+        ]);
 
-        $request->user()->save();
+        $user =  User::find(Auth::id());
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        $user->name = $validated['name'] ?? $user->name;
+        $user->phone = $validated['phone'] ?? $user->phone;
+        $user->address = $validated['address'] ?? $user->address;
+        $user->zip = $validated['zip'] ?? $user->zip;
+
+        $user->save();
+
+        return redirect('profile')->with('status', 'Profile Anda telah diperbaharui');
     }
 
     /**

@@ -29,6 +29,14 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+//Order Route
+Route::get('order', [OrderController::class, 'index']);
+
+Route::post('problems', function (Request $request) {
+    $problems = Devices::find($request->perangkat)->problems;
+    return $problems;
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -55,15 +63,8 @@ Route::middleware('auth')->group(function () {
     // Route::post('register', [AuthController::class, 'store']);
     // Route::get('reset-pass', [AuthController::class, 'reset_pass']);
 
-    //Order Route
-    Route::get('order', [OrderController::class, 'index']);
     Route::post('order', [OrderController::class, 'store']);
     Route::get('history', [OrderController::class, 'history']);
-
-    Route::post('problems', function (Request $request) {
-        $problems = Devices::find($request->perangkat)->problems;
-        return $problems;
-    });
 });
 
 require __DIR__ . '/auth.php';

@@ -419,7 +419,7 @@
                             <div class="invalid-feedback" id="problems-feedback"></div>
                         </div>
                         <div class="form-floating mb-1">
-                            <textarea class="form-control" id="address" name="address" value="" placeholder="Alamat Customer" style="height : 100px" required></textarea>
+                            <textarea class="form-control" id="address" name="address" placeholder="Alamat Customer" style="height : 100px" required></textarea>
                             <label for="address">Alamat Customer</label>
                             <div class="invalid-feedback" id="address-feedback"></div>
                         </div>

@@ -16,33 +16,21 @@ class DatabaseSeeder extends Seeder
     {
         User::factory()->create([
             'name' => 'Arsan Kumala Jaya',
-            'username' => 'arsan',
             'email' => 'arsanptik05@gmail.com',
             'role' => 'admin',
             'phone' => '082291610212',
-            'province' => '',
-            'city' => '',
-            'subdistrict' => '',
-            'village' => '',
             'address' => '',
             'zip' => '',
-            'bio' => '',
             'password' => Hash::make('admin')
         ]);
 
         User::factory()->create([
             'name' => 'Ali Ahmad',
-            'username' => 'ali',
             'email' => 'ali@gmail.com',
             'role' => 'customer',
             'phone' => '082291610212',
-            'province' => '',
-            'city' => '',
-            'subdistrict' => '',
-            'village' => '',
             'address' => '',
             'zip' => '',
-            'bio' => '',
             'password' => Hash::make('admin')
         ]);
 
@@ -53,6 +41,5 @@ class DatabaseSeeder extends Seeder
             ProblemsSeeder::class,
             OrderSeeder::class
         ]);
-
     }
 }

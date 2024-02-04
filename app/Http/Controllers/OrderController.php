@@ -9,6 +9,9 @@ use App\Models\Devices;
 use App\Models\Problems;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendMail;
 
 class OrderController extends Controller
 {
@@ -18,6 +21,7 @@ class OrderController extends Controller
     public function index()
     {
         $devices = Devices::all();
+        $user = User::find(Auth::id());
         $ac_ringan = Problems::where(['devices_id' => 1, 'services' => 'Ringan'])->get();
         $ac_berat = Problems::where(['devices_id' => 1, 'services' => 'Berat'])->get();
         $kulkas_ringan = Problems::where(['devices_id' => 2, 'services' => 'Ringan'])->get();
@@ -27,6 +31,7 @@ class OrderController extends Controller
         return view(
             'orders.index',
             [
+                'user' => $user,
                 'devices' => $devices,
                 'ac_r' => $ac_ringan,
                 'ac_b' => $ac_berat,
@@ -57,7 +62,7 @@ class OrderController extends Controller
             'jenis_kerusakan' => 'required',
             'alamat' => 'required',
             'tanggal_pengerjaan' => 'required',
-            'catatan' => 'required'
+            'catatan' => 'nullable|required'
         ], $messages = [
             'required' => 'Inputan :attribute masih kosong.',
         ]);
@@ -77,7 +82,17 @@ class OrderController extends Controller
             'notes' => $request->catatan
         ]);
 
-        // Order::create($order);
+        $mailData = [
+            'title' => 'Invoice Bikin Dingin',
+            'devices' => Devices::find($request->perangkat, ['devices']),
+            'problems' => Problems::find($request->jenis_kerusakan, ['problems']),
+            'address' => $request->alamat,
+            'work_date' => $request->tanggal_pengerjaan,
+            'notes' => $request->catatan,
+            'url' => 'https://www.bikin-dingin.test/order'
+        ];
+
+        Mail::to('arsanptik05@gmail.com')->send(new SendMail($mailData));
 
         return response()->json([
             'success' => true,

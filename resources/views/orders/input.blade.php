@@ -56,7 +56,7 @@
                         <label for="floatingKerusakan">Jenis Kerusakan</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <textarea class="form-control" id="alamat" placeholder="Alamat Customer"></textarea>
+                        <textarea class="form-control" id="alamat" placeholder="Alamat Customer">{{ $user->address }}</textarea>
                         <label for="alamat">Alamat Customer</label>
                     </div>
                     <div class="form-floating mb-3">

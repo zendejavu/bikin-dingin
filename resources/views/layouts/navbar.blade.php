@@ -22,7 +22,7 @@
                     @endguest
                     @auth
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle {{ (request()->is('order*') ? ' active' : (request()->is('history*') ? ' active' : '')) }}" data-bs-toggle="dropdown">Pemesanan</a>
+                        <a href="javascrip:void(0)" class="nav-link dropdown-toggle {{ (request()->is('order*') ? ' active' : (request()->is('history*') ? ' active' : '')) }}" data-bs-toggle="dropdown">Pemesanan</a>
                         <div class="dropdown-menu rounded">
                             <a href="/order" class="dropdown-item {{ request()->is('order*') ? ' active' : '' }}">Daftar Produk Layanan</a>
                             <a href="/history" class="dropdown-item {{ request()->is('history*') ? ' active' : '' }}">Riwayat Pemesanan</a>
@@ -35,11 +35,11 @@
                     <hr class="dropdown-divider bg-secondary">
                     @auth
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                        <a href="javascrip:void(0)" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             {{ auth()->user()->name }}
                         </a>
                         <div class="dropdown-menu dropdown-menu-end rounded">
-                            <a href="/my-account" class="dropdown-item"><i class="fa-solid fa-user me-2"></i>Profil</a>
+                            <a href="{{ route('profile.edit') }}" class="dropdown-item"><i class="fa-solid fa-user me-2"></i>Profil</a>
                             <hr class="dropdown-divider">
                             <form action="/logout" method="POST">
                                 @csrf
