@@ -12,15 +12,18 @@
                     <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-instagram text-primary"></i></a>
                     <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
                 </div>
+                <div class="d-flex align-items-center mt-4">
+                    <a href="https://nitromks.ac.id"><img src="{{ asset('assets/img/logo-nitro-bulat.png') }}" width="75" height="75" alt="IBK Nitro"></a>
+                    <a href="https://nitromks.ac.id"><img src="{{ asset('assets/img/nitro.png') }}" alt="IBK Nitro"></a>
+                </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <a href="#" class="h3 text-secondary">Short Link</a>
                 <div class="mt-4 d-flex flex-column short-link">
-                    <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Tentang Kami</a>
-                    <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Kontak Kami</a>
-                    <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Layanan Kami</a>
-                    <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Produk Kami</a>
-                    <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Artiker Terkini</a>
+                    <a href="/#about" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Tentang Kami</a>
+                    <a href="/#contact" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Kontak Kami</a>
+                    <a href="/#services" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Layanan Kami</a>
+                    <a href="/order" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Produk Kami</a>
                 </div>
             </div>
             {{-- <div class="col-lg-3 col-md-6">
@@ -49,7 +52,7 @@
             </div>
             <div class="col-md-6 text-center text-md-end">
                 {{-- <span class="text-light">Designed By<a href="https://htmlcodex.com" class="text-secondary">HTML Codex</a> Distributed By <a href="https://themewagon.com">ThemeWagon</a></span> --}}
-                <span class="text-light">v1.0.0 (Beta)</span>
+                <span class="text-light">v1.0 (Beta)</span>
                 
             </div>
         </div>

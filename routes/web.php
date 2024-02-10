@@ -8,6 +8,9 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Order;
+use App\Models\Problems;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,17 +57,22 @@ Route::middleware('auth')->group(function () {
         return view('customer.my_account');
     });
 
-    //Auth Route
-    // Route::get('login', [AuthController::class, 'index'])->name('login')->middleware('guest');
-    // Route::post('login', [AuthController::class, 'authenticate']);
-    // Route::post('logout', [AuthController::class, 'logout']);
-
-    // Route::get('register', [AuthController::class, 'register']);
-    // Route::post('register', [AuthController::class, 'store']);
-    // Route::get('reset-pass', [AuthController::class, 'reset_pass']);
-
     Route::post('order', [OrderController::class, 'store']);
+    Route::post('order/{id}', [OrderController::class, 'destroy']);
     Route::get('history', [OrderController::class, 'history']);
+    Route::get('invoice/{id}', function (string $id) {
+        $data = Order::find($id);
+        $devices = Devices::find($data['device_id']);
+        $problems = Problems::find($data['problem_id']);
+        return view(
+            'orders.invoice',
+            [
+                'data' => $data,
+                'devices' => $devices,
+                'problems' => $problems,
+            ]
+        );
+    });
 });
 
 require __DIR__ . '/auth.php';

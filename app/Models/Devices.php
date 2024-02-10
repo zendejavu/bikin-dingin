@@ -10,10 +10,15 @@ class Devices extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['devices'];
+    protected $fillable = ['device'];
 
     public function problems(): HasMany
     {
-        return $this->hasMany(Problems::class);
+        return $this->hasMany(Problems::class, 'device_id');
+    }
+
+    public function orders(): HasMany
+    {
+        return $this->hasMany(Order::class, 'device_id');
     }
 }

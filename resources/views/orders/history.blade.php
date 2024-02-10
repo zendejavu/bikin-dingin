@@ -2,11 +2,70 @@
 
 @section('title', 'Riwayat Pemesanan')
 
+@section('meta')
+<meta name="csrf-token" content="{{ csrf_token() }}">
+@endsection
+
 @section('css-plugins')
-    <link href="{{ asset('/') }}assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
 @endsection
 
 @section('js-plugins')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.4/dist/sweetalert2.all.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.4/dist/sweetalert2.min.css" rel="stylesheet">
+<script>
+    $(document).ready(function () {
+        $('.btn-delete').on('click', function () {
+            let token = $("meta[name='csrf-token']").attr("content");
+            let id = $(this).data('id');
+            console.log(id,token);
+            Swal.fire({
+                title: "Anda yakin ingin menghapus pesanan ?",
+                text: "Anda akan menghapus pesanan secara permanen!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "YA, HAPUS!",
+                cancelButtonText: "TIDAK"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: "POST",
+                        url: "order/"+id,
+                        data: {
+                            'id': id,
+                            '_token': token
+                        },
+                        // url: `/order/${id}`,
+                        // type: "DELETE",
+                        // cache: false,
+                        // data: {
+                        //     "_token": token
+                        // },
+                        success: function (data) {
+                            console.log(data);
+                            Swal.fire({
+                                title: "Terhapus!",
+                                icon: "success",
+                                text: "Pesanan Anda telah terhapus.",
+                                showConfirmButton: false,
+                                timer: 3000
+                            });
+                            
+                            //remove post on table
+                            $(`#index_${id}`).remove();
+                        },
+                        error: function (error) {
+                            console.log(error.data);
+                        }
+                    });
+                }
+            });
+        });
+    });
+</script>
 @endsection
 
 @section('container')
@@ -23,7 +82,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mb-3">
                             <li class="breadcrumb-item">
-                                <a href="/order">Layanan Pemesanan</a>
+                                <a href="/order">Pemesanan</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">Riwayat</li>
                         </ol>
@@ -33,32 +92,30 @@
 
             <div class="row g-5 justify-content-center">
                 <div class="col-10 align-items-end table-responsive-md">
-                    <table class="table table-striped table-hover">
+                    <table class="table">
+                    {{-- <table class="table table-striped table-hover"> --}}
                         <thead class="table-dark">
                             <tr>
                                 <td class="text-center align-middle">No</td>
                                 <td class="text-center align-middle">Jenis Perangkat</td>
                                 <td class="text-center align-middle">Masalah Perangkat</td>
                                 <td class="text-center align-middle">Tanggal Pengerjaan</td>
-                                <td class="text-center align-middle">Catatan</td>
+                                <td class="text-center align-middle">Status</td>
                                 <td class="text-center align-middle">Aksi</td>
                             </tr>
                         </thead>
                         <tbody>
+                            {{-- {{ $orders[3]->devices->devices }} --}}
                             @foreach ($orders as $order)
-                            <tr>
+                            <tr id="index_{{ $order->id }}">
                                 <td class="text-dark align-middle">{{ $loop->iteration }}</td>
-                                <td class="text-dark align-middle">{{ $order->devices->devices }}</td>
-                                <td class="text-dark align-middle">{{ $order->problems->problems }}</td>
+                                <td class="text-dark align-middle">{{ $order->devices->device }}</td>
+                                <td class="text-dark align-middle">{{ $order->problems->problem }}</td>
                                 <td class="text-dark align-middle text-center">{{ date('d M Y', strtotime(($order->work_date))) }}</td>
-                                <td class="text-dark align-middle">{{ $order->notes }}</td>
-                                <td class="text-dark align-middle text-inline">
-                                    <a href="/invoice" class="text-dark"><i class="fa-regular fa-file-invoice"></i></a>
-                                    <form method="post" class="delete_form" action="{{ 'order/'.$order->id }}">
-                                        @csrf
-                                        <input type="hidden" name="_method" value="DELETE" />
-                                        <a type="submit" class="text-danger"><i class="fa-regular fa-trash"></i></a>
-                                    </form>
+                                <td><span class="badge rounded-pill text-bg-success">Selesai</span></td>
+                                <td class="text-dark align-middle text-center">
+                                    <a href="/invoice/{{ $order->id }}"><i class="fa-regular fa-file-invoice"></i></a>
+                                    <a href="javascript: void(0);" class="btn-delete" data-id="{{$order->id}}" data-toggle="tooltip" title="Hapus" role="button"><i class="fa-solid fa-xmark text-danger"></i></a>
                                 </td>
                             </tr>
                             @endforeach

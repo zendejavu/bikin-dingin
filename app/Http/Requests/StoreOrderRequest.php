@@ -22,7 +22,19 @@ class StoreOrderRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'perangkat' => 'required',
+            'jenis_kerusakan' => 'required',
+            'alamat' => 'required',
+            'tanggal_pengerjaan' => 'required',
+            'catatan' => 'required',
+            'harga' => 'nullable',
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'required' => 'Inputan :attribute masih kosong.'
         ];
     }
 }

@@ -1,9 +1,6 @@
 <div class="container-fluid bg-primary sticky-top">
     <div class="container">
         <nav class="navbar navbar-dark navbar-expand-lg py-0">
-            {{-- <a href="/" class="navbar-brand">
-                <img src="{{ asset('/') }}assets/img/bikin-dingin.png" class="navbar-brand-img logo-light logo-large" alt="..." width="160" height="40">
-            </a> --}}
             <a href="/" class="navbar-brand">
                 <h1 class="text-white fw-bold d-block">
                     Bikin<span class="text-secondary">Dingin</span> 
@@ -22,7 +19,7 @@
                     @endguest
                     @auth
                     <div class="nav-item dropdown">
-                        <a href="javascrip:void(0)" class="nav-link dropdown-toggle {{ (request()->is('order*') ? ' active' : (request()->is('history*') ? ' active' : '')) }}" data-bs-toggle="dropdown">Pemesanan</a>
+                        <a href="#" class="nav-link dropdown-toggle {{ (request()->is('order*') ? ' active' : (request()->is('history*') ? ' active' : '')) }}" data-bs-toggle="dropdown">Pemesanan</a>
                         <div class="dropdown-menu rounded">
                             <a href="/order" class="dropdown-item {{ request()->is('order*') ? ' active' : '' }}">Daftar Produk Layanan</a>
                             <a href="/history" class="dropdown-item {{ request()->is('history*') ? ' active' : '' }}">Riwayat Pemesanan</a>
@@ -35,7 +32,7 @@
                     <hr class="dropdown-divider bg-secondary">
                     @auth
                     <div class="nav-item dropdown">
-                        <a href="javascrip:void(0)" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             {{ auth()->user()->name }}
                         </a>
                         <div class="dropdown-menu dropdown-menu-end rounded">
@@ -49,7 +46,7 @@
                     </div>
                     @else
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="nav-item nav-link"><i class="fa-solid fa-user-plus me-2"></i>Register</a>
+                            <a href="{{ route('register') }}" class="nav-item nav-link"><i class="fa-solid fa-user-plus me-2"></i>Daftar</a>
                         @endif
                     <a href="{{ route('login') }}" class="nav-item nav-link"><i class="fa-solid fa-right-to-bracket me-2"></i>Login</a>
                     @endauth

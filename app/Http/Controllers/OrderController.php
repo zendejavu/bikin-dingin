@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMail;
+use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
@@ -22,12 +23,24 @@ class OrderController extends Controller
     {
         $devices = Devices::all();
         $user = User::find(Auth::id());
-        $ac_ringan = Problems::where(['devices_id' => 1, 'services' => 'Ringan'])->get();
-        $ac_berat = Problems::where(['devices_id' => 1, 'services' => 'Berat'])->get();
-        $kulkas_ringan = Problems::where(['devices_id' => 2, 'services' => 'Ringan'])->get();
-        $kulkas_berat = Problems::where(['devices_id' => 2, 'services' => 'Berat'])->get();
-        $freezer_ringan = Problems::where(['devices_id' => 3, 'services' => 'Ringan'])->get();
-        $freezer_berat = Problems::where(['devices_id' => 3, 'services' => 'Berat'])->get();
+        $ac_ringan = Problems::where(['device_id' => 1, 'service' => 'Ringan'])->get();
+        $ac_berat = Problems::where(['device_id' => 1, 'service' => 'Berat'])->get();
+        $kulkas_ringan = Problems::where(['device_id' => 2, 'service' => 'Ringan'])->get();
+        $kulkas_berat = Problems::where(['device_id' => 2, 'service' => 'Berat'])->get();
+        $freezer_ringan = Problems::where(['device_id' => 3, 'service' => 'Ringan'])->get();
+        $freezer_berat = Problems::where(['device_id' => 3, 'service' => 'Berat'])->get();
+
+        // Harga Pemesanan
+        $harga_maintenance_ac = 50000;
+        $harga_maintenance_kulkas = 60000;
+        $harga_maintenance_freezer = 70000;
+        $harga_service_ringan_ac = 250000;
+        $harga_service_ringan_kulkas = 260000;
+        $harga_service_ringan_freezer = 270000;
+        $harga_service_berat_ac = 400000;
+        $harga_service_berat_kulkas = 410000;
+        $harga_service_berat_freezer = 420000;
+
         return view(
             'orders.index',
             [
@@ -38,7 +51,16 @@ class OrderController extends Controller
                 'kulkas_r' => $kulkas_ringan,
                 'kulkas_b' => $kulkas_berat,
                 'freezer_r' => $freezer_ringan,
-                'freezer_b' => $freezer_berat
+                'freezer_b' => $freezer_berat,
+                'harga_maintenance_ac' => $harga_maintenance_ac,
+                'harga_maintenance_kulkas' => $harga_maintenance_kulkas,
+                'harga_maintenance_freezer' => $harga_maintenance_freezer,
+                'harga_service_ringan_ac' => $harga_service_ringan_ac,
+                'harga_service_ringan_kulkas' => $harga_service_ringan_kulkas,
+                'harga_service_ringan_freezer' => $harga_service_ringan_freezer,
+                'harga_service_berat_ac' => $harga_service_berat_ac,
+                'harga_service_berat_kulkas' => $harga_service_berat_kulkas,
+                'harga_service_berat_freezer' => $harga_service_berat_freezer
             ]
         );
     }
@@ -57,46 +79,35 @@ class OrderController extends Controller
     public function store(StoreOrderRequest $request)
     {
         //define validation rules
-        $validator = Validator::make($request->all(), [
-            'perangkat' => 'required',
-            'jenis_kerusakan' => 'required',
-            'alamat' => 'required',
-            'tanggal_pengerjaan' => 'required',
-            'catatan' => 'nullable|required'
-        ], $messages = [
-            'required' => 'Inputan :attribute masih kosong.',
-        ]);
-
-        //check if validation fails
-        if ($validator->fails()) {
-            return response()->json($validator->errors(), 422);
-        }
+        $validator = $request->validated();
 
         //create order
         $order = Order::create([
             'user_id' => Auth::id(),
-            'devices_id' => $request->perangkat,
-            'problems_id' => $request->jenis_kerusakan,
+            'device_id' => $request->perangkat,
+            'problem_id' => $request->jenis_kerusakan,
             'address' => $request->alamat,
             'work_date' => $request->tanggal_pengerjaan,
-            'notes' => $request->catatan
+            'note' => $request->catatan,
+            'price' => $request->harga
         ]);
 
         $mailData = [
-            'title' => 'Invoice Bikin Dingin',
-            'devices' => Devices::find($request->perangkat, ['devices']),
-            'problems' => Problems::find($request->jenis_kerusakan, ['problems']),
+            'title' => 'Notifikasi Pemesanan Bikin Dingin',
+            'device' => Devices::find($request->perangkat, ['device']),
+            'problem' => Problems::find($request->jenis_kerusakan, ['problem']),
             'address' => $request->alamat,
             'work_date' => $request->tanggal_pengerjaan,
-            'notes' => $request->catatan,
-            'url' => 'https://www.bikin-dingin.test/order'
+            'note' => $request->catatan,
+            'price' => $request->harga,
+            'url' => config('app.url') . '/invoice/' . $order['id']
         ];
 
-        Mail::to('arsanptik05@gmail.com')->send(new SendMail($mailData));
+        Mail::to(Auth::user()->email)->send(new SendMail($mailData));
 
         return response()->json([
             'success' => true,
-            'message' => 'Data Berhasil disimpan!',
+            'message' => 'Data Berhasil disimpan dan bukti pemesanan telah dikirimkan ke email Anda!',
             'data'    => $order
         ]);
 
@@ -104,49 +115,32 @@ class OrderController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(Order $order)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Order $order)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateOrderRequest $request, Order $order)
-    {
-        //
-    }
-
-    /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Order $order)
+    public function destroy(string $id)
     {
-        //
-    }
+        $order = Order::find($id);
+        $order->delete();
 
-    public function problems(Problems $devices_id)
-    {
-        $problems = Problems::where('devices_id', $devices_id)->get();
-        dd($problems);
-        return view('orders.index', [
-            'problems' => $problems
+        return response()->json([
+            'success' => true,
+            'message' => 'Pesanan Anda telah terehapus.',
+            'data'    => $order
         ]);
     }
 
     public function history()
     {
-        $data = Order::all();
-        return view('orders.history', ['orders' => $data]);
+        $data = Order::where('user_id', Auth::id())->get();
+        // $devices = Devices::find($data['devices_id']);
+        // $problems = Problems::find($data['problems_id']);
+        return view(
+            'orders.history',
+            [
+                // 'devices' => $devices,
+                // 'problems' => $problems,
+                'orders' => $data
+            ]
+        );
     }
 }

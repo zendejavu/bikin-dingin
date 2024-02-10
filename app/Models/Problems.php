@@ -11,7 +11,7 @@ class Problems extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['problems'];
+    protected $fillable = ['problem'];
 
     public function devices(): HasOne
     {

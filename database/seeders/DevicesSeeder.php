@@ -13,8 +13,8 @@ class DevicesSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('devices')->insert(['devices' => 'AC']);
-        DB::table('devices')->insert(['devices' => 'Kulkas']);
-        DB::table('devices')->insert(['devices' => 'Freezer']);
+        DB::table('devices')->insert(['device' => 'AC']);
+        DB::table('devices')->insert(['device' => 'Kulkas']);
+        DB::table('devices')->insert(['device' => 'Freezer']);
     }
 }

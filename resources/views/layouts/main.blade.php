@@ -69,7 +69,7 @@
     <!-- Team End -->
     
     <!-- Testimonial Start -->
-    {{-- @include('pages.testimonial') --}}
+    @include('pages.testimonial')
     <!-- Testimonial End -->
     
     <!-- Contact Start -->

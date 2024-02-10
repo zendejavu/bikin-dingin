@@ -15,11 +15,12 @@ class OrderSeeder extends Seeder
     {
         DB::table('orders')->insert([
             'user_id' => 1,
-            'devices_id' => 1,
-            'problems_id' => 3,
+            'device_id' => 1,
+            'problem_id' => 1,
             'address' => 'Kampung Lette',
             'work_date' => '2024/01/12',
-            'notes' => 'AC sudah tidak dingin',
+            'note' => 'AC sudah tidak dingin',
+            'price' => 0,
         ]);
     }
 }

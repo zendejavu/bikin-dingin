@@ -36,7 +36,7 @@
                         </div>
                         <div class="ms-3">
                             <h4 class="text-primary">Email Kami</h4>
-                            <a class="h5" href="mailto:info@example.com" target="_blank">info@bikindingin.com</a>
+                            <a class="h5" href="mailto:info@example.com" target="_blank">bikindingin5@gmail.com</a>
                         </div>
                     </div>
                 </div>
