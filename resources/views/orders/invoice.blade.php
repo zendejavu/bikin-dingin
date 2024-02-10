@@ -173,8 +173,8 @@
                                     {{-- @foreach ($data as $item) --}}
                                     <tr>
                                         <td>1</td>
-                                        <td>{{ $devices->device }}</td>
-                                        <td>{{ $problems->problem }}</td>
+                                        <td>{{ $data->devices->device }}</td>
+                                        <td>{{ $data->problems->problem }}</td>
                                         <td>{{ $data->note }}</td>
                                         <td class="text-end">Rp. {{ number_format($data->price, 0, ',', '.') }}</td>
                                     </tr>

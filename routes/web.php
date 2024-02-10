@@ -62,14 +62,10 @@ Route::middleware('auth')->group(function () {
     Route::get('history', [OrderController::class, 'history']);
     Route::get('invoice/{id}', function (string $id) {
         $data = Order::find($id);
-        $devices = Devices::find($data['device_id']);
-        $problems = Problems::find($data['problem_id']);
         return view(
             'orders.invoice',
             [
-                'data' => $data,
-                'devices' => $devices,
-                'problems' => $problems,
+                'data' => $data
             ]
         );
     });
